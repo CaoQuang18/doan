@@ -1,0 +1,34 @@
+{
+  "name": "real-estate-starter",
+  "version": "1.0.0",
+  "description": "HomeLand Real Estate Platform",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run ai-backend\" \"npm run frontend\"",
+    "frontend": "cd frontend & npm start",
+    "backend": "cd backend & npm run dev",
+    "ai-backend": "cd ai-backend & python app.py",
+    "build": "cd frontend && npm run build && cd ..",
+    "start:prod": "concurrently --kill-others-on-fail \"npm run backend:prod\" \"npm run ai-backend\" \"npm run frontend:prod\"",
+    "backend:prod": "cd backend && NODE_ENV=production npm start",
+    "frontend:prod": "cd frontend && npm run build && npm run start",
+    "install:all": "npm install & cd frontend & npm install & cd .. & cd backend & npm install & cd ..",
+    "clean": "if exist frontend\\node_modules rmdir /s /q frontend\\node_modules & if exist backend\\node_modules rmdir /s /q backend\\node_modules & if exist node_modules rmdir /s /q node_modules",
+    "copy-images": "xcopy \"frontend\\src\\assets\\img\" \"frontend\\public\\assets\\img\" /E /I /Y"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "keywords": [
+    "real-estate",
+    "react",
+    "nodejs",
+    "mongodb",
+    "python",
+    "ai-chatbot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}

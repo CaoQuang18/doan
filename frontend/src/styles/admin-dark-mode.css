@@ -1,0 +1,44 @@
+/* ============================================
+   ADMIN DARK MODE - ULTRA SMOOTH VERSION
+   ============================================ */
+
+/* Force hardware acceleration */
+.admin-layout,
+.admin-layout * {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Instant color changes - NO transition for admin */
+.admin-layout,
+.admin-layout *,
+.admin-layout *::before,
+.admin-layout *::after {
+  transition: none !important;
+}
+
+/* Only allow transitions for hover effects */
+.admin-layout button:hover,
+.admin-layout a:hover,
+.admin-layout input:focus,
+.admin-layout select:focus,
+.admin-layout textarea:focus {
+  transition: background-color 0.1s ease-out, 
+              box-shadow 0.1s ease-out,
+              transform 0.1s ease-out !important;
+}
+
+/* Smooth shadow transitions only */
+.admin-layout .shadow,
+.admin-layout .shadow-lg,
+.admin-layout .shadow-xl,
+.admin-layout .shadow-2xl {
+  transition: box-shadow 0.2s ease-out !important;
+}
